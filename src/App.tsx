@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { AppLayout } from "@/components/app/AppLayout";
-import Index from "./pages/Index";
 import Login from "./pages/Login";
 import CriarSenha from "./pages/CriarSenha";
 import NotFound from "./pages/NotFound";
@@ -28,7 +27,7 @@ const App = () => (
         <AuthProvider>
           <Routes>
             {/* Público */}
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/criar-senha" element={<CriarSenha />} />
 
